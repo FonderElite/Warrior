@@ -20,7 +20,7 @@ Date of Publish : 12/28/2020<br>
 Last Update : 12/29/2020 <br>
 Find More About Malwares?<br>
 
-<pre>   When Find out about what is Ransomware ? -> <a href="https://en.wikipedia.org/wiki/Malware">Click Hare</a> <- </pre><br><br>
+<pre>   When Find out about what is Ransomware ? -> <a href="https://en.wikipedia.org/wiki/Malware">Click Here</a> <- </pre><br><br>
 
 
 # Work flow
