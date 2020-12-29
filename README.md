@@ -47,3 +47,6 @@ Warrior requires the pycrypto library and requests, installation below
 - [x] Highly destructive!
 - [x] Supported on all versions of Windows & Linux
 - [x] High quality malwares!
+
+# Update:
+- [x] Added 6 new malwares for windows
