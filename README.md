@@ -1,4 +1,5 @@
-# Warrior[Coded By: FonderElite]
+# Warrior
+## Coded By FonderElite
 <pre>
  █████   ███   █████                                ███                    
 ░░███   ░███  ░░███                                ░░░                     
