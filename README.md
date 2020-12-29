@@ -21,3 +21,29 @@ Last Update : 12/29/2020 <br>
 Find More About Malwares?<br>
 
 <pre>   When Find out about what is Ransomware ? -> <a href="https://en.wikipedia.org/wiki/Malware">Click Hare</a> <- </pre><br><br>
+
+
+# Work flow
+
+Gonnacry encrypt all files and call Daemon
+
+Daemon encrypt new files, calls decryptor and change wallpaper
+
+Decryptor try to communicate to server to send the Client private key wich is encrypted.
+
+# Requirements 
+
+Warrior requires the pycrypto library and requests, installation below
+
+    ~$ sudo pip install -r requirements.txt
+
+# Executing the code
+
+    ~$ python3 warrior.py
+
+# Features:
+- [x] Generates Backdoors,Viruses,Worms etc..
+- [x] Works even without internet connection.
+- [x] Highly destructive!
+- [x] Supported on all versions of Windows & Linux
+- [x] High quality malwares!
