@@ -17,7 +17,7 @@ About: This is a Malware Generator  Written in python.<br>
 Tested On: Windows 10 && Linux <br>
 Support : +Windows10 && Linux <br>
 Date of Publish : 12/28/2020<br>
-Last Update : 12/29/2020 <br>
+Last Update : 12/30/2020 <br>
 Find More About Malwares?<br>
 
 <pre>   Find More About Malwares Here? -> <a href="https://en.wikipedia.org/wiki/Malware">Click Here</a> <- </pre><br><br>
@@ -49,4 +49,4 @@ Warrior requires the pycrypto library and requests, installation below
 - [x] High quality malwares!
 
 # Update:
-- [x] Added 6 new malwares for windows
+- [x] Added 6 new malwares for windows (12/30/20)
