@@ -49,4 +49,4 @@ Warrior requires the pycrypto library and requests, installation below
 - [x] High quality malwares!
 
 # Update:
-- [x] Added 6 new malwares for windows (12/30/20)
+* Added 6 new malwares for windows (12/30/20)
