@@ -1,0 +1,8 @@
+ os
+ time
+ colorama
+ socket
+ shutil
+ pyautogui
+ keyboard
+smtplib
