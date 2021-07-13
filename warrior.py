@@ -1,14 +1,7 @@
-import os
-import time
-import colorama
+import os,time,colorama,socket,shutil,smtplib,platform,subprocess
 from colorama import Fore, Style, Back
-import socket
-import shutil
-import smtplib
 from threading import Timer
 from datetime import datetime
-import platform
-import subprocess
 
 print(platform.system())
 print(platform.release())
