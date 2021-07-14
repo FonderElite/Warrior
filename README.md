@@ -31,12 +31,6 @@ Daemon encrypt new files, calls decryptor and change wallpaper
 
 Decryptor try to communicate to server to send the Client private key wich is encrypted.
 
-# Requirements 
-
-Warrior requires the pycrypto library and requests, installation below
-
-    ~$ sudo pip install -r requirements.txt
-
 # Executing the code
 
     ~$ python3 warrior.py
