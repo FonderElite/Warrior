@@ -22,7 +22,6 @@ Find More About Malwares?<br>
 
 <pre>   Find More About Malwares Here? -> <a href="https://en.wikipedia.org/wiki/Malware">Click Here</a> <- </pre><br><br>
 
-
 # Work flow
 
 Gonnacry encrypt all files and call Daemon
